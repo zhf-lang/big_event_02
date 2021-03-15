@@ -52,12 +52,12 @@ $(function () {
             data: $(this).serialize(),
             success: (res) => {
                 console.log(res);
-                
+
                 if (res.status != 0) {
-                   return layer.msg(res.message, { icon: 5 });
+                    return layer.msg(res.message, { icon: 5 });
                 }
                 layer.msg(res.message, { icon: 6 });
-                localStorage.setItem('token',res.token)
+                localStorage.setItem('token', res.token)
                 location.href = "/index.html";
             }
         })
