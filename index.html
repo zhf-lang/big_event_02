@@ -21,8 +21,9 @@
             
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
-                    <a href="javascript:;">
+                    <a href="javascript:;" class="userinfo">
                         <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <span class="textavater">A</span>
                         个人中心
                     </a>
                     <dl class="layui-nav-child">
@@ -31,7 +32,7 @@
                         <dd><a href="">重置密码</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">
+                <li class="layui-nav-item"><a href="javascript:;" id="btnLogout">
                     <span class="iconfont icon-tuichu"></span>
                     退出
                 </a></li>
@@ -40,14 +41,19 @@
 
         <div class="layui-side layui-bg-black">
             <div class="layui-side-scroll">
+                <div class="userinfo">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    <span class="textavater">A</span>
+                    <span id="welcome">欢迎 XXX</span>
+                </div>
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-filter="test" lay-shrink="all">
-                    <li class="layui-nav-item"><a href="javascript:;">
-                        <span class="iconfont icon-home"></span>
+                    <li class="layui-nav-item layui-this"><a href="/home/dashboard.html" target="fd">
+                        <span class="iconfont icon-home "></span>
                         首页
                     </a></li>
 
-                    <li class="layui-nav-item layui-nav-itemed">
+                    <li class="layui-nav-item ">
                         <a class="" href="javascript:;">
                             <span class="iconfont icon-16"></span>
                             文章管理
@@ -75,17 +81,19 @@
 
         <div class="layui-body">
             <!-- 内容主体区域 -->
-            <div style="padding: 15px;">内容主体区域</div>
+            <iframe src="/home/dashboard.html" frameborder="0" name="fd"></iframe>
         </div>
 
         <div class="layui-footer">
             <!-- 底部固定区域 -->
-            © layui.com - 底部固定区域
+            © www.itheima.com - 黑马程序员
         </div>
     </div>
 
     <script src="/assets/lib/layui/layui.all.js"></script>
     <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/js/baseAPI.js"></script>
+    <script src="/assets/js/index.js"></script>
 </body>
 
 </html>

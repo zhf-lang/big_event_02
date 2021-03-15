@@ -26,7 +26,7 @@ $(function () {
         e.preventDefault();
 
         $.ajax({
-            url: 'http://api-breakingnews-web.itheima.net/api/reguser',
+            url: '/api/reguser',
             type: 'post',
             data: {
                 username: $('.reg-box [name=username]').val(),
@@ -47,17 +47,17 @@ $(function () {
     $('#login-form').on('submit', function (e) {
         e.preventDefault();
         $.ajax({
-            url: 'http://api-breakingnews-web.itheima.net/api/login',
+            url: '/api/login',
             type: 'post',
             data: $(this).serialize(),
             success: (res) => {
                 console.log(res);
-                
+
                 if (res.status != 0) {
-                   return layer.msg(res.message, { icon: 5 });
+                    return layer.msg(res.message, { icon: 5 });
                 }
                 layer.msg(res.message, { icon: 6 });
-                localStorage.setItem('token',res.token)
+                localStorage.setItem('token', res.token)
                 location.href = "/index.html";
             }
         })
